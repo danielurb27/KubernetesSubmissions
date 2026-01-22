@@ -1,0 +1,19 @@
+const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <body>
+        <h1>Todo App running in Kubernetes! Made by nejo</h1>
+        <p>Port: ${PORT}</p>
+      </body>
+    </html>
+  `)
+})
+
+app.listen(PORT, () => {
+  console.log(`Server started in port ${PORT}`)
+})
